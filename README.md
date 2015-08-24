@@ -1,6 +1,6 @@
 # sketch-a-sketch
 
-Project: Project: Javascript/jQuery
+Project: Javascript/jQuery
 
 Fancy sketch-a-sketch tool using HTML / CSS / JS / jQuery.
 
