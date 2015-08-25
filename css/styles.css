@@ -4,3 +4,12 @@
 	margin: 50px auto;
 	border: 1px solid #000;
 }
+
+.row {
+	display: block;
+}
+
+.block {
+	display: inline-block;
+	border: 1px solid #f00;
+}
