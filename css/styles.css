@@ -1,14 +1,15 @@
 #container {
 	margin: 25px auto;
 }
-
 .row {
 	display: block;
 	margin-top: 1px;
 }
-
 .block {
 	display: inline-block;
 	border: 1px solid #999;
 	margin-left: -1px;
+}
+.black-background {
+	background-color: #000;
 }
