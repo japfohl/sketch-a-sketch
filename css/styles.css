@@ -1,5 +1,30 @@
+body {
+	padding: 0px;
+	margin: 0px;
+}
+#header {
+	position: fixed;
+	top: 0px;
+	display: block;
+	height: 40px;
+	width: 100%;
+	text-align: center;
+}
+button {
+	height: 40px;
+	width: 175px;
+	margin: 10px 20px;
+	border-radius: 2px;
+	display: inline-block;
+	border: 1px solid #999;
+	background-color: #d6d6d6;
+	font-size: 14px;
+	font-color: #303030;
+	font-family: arial;
+	
+}
 #container {
-	margin: 25px auto;
+	margin: 85px auto;
 }
 .row {
 	display: block;
@@ -9,7 +34,4 @@
 	display: inline-block;
 	border: 1px solid #999;
 	margin-left: -1px;
-}
-.black-background {
-	background-color: #000;
 }
