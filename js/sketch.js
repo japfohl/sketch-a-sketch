@@ -1,18 +1,28 @@
+$(document).ready(function() {
+	buildGrid();
+	setBackground();
+	$('#reset').click(restart);
+	$('#clear').click(clearGrid);
+	$('#default').click(blackMode);
+	$('#rainbow').click(rainbowMode);
+});
+
 var background = {
 		black: function () {
-			$(this).css('background-color', 'rgb(0,0,0)')
+			$(this).css('background-color', 'rgb(0,0,0)');
 		}, 
 		random: function () {
 			$(this).css('background-color', 'rgb('+getRGB()+', '+getRGB()+', '+getRGB()+')');
-		}, 
+		}
 	}, 
-	backgroundColor = 'black'; //starts at default color of black
+	backgroundColor = 'black', 
+	currentOpacity; //starts at default color of black
 
 function getNumBlocks() {
 	var tempSize, badSize = true;
 	//test for proper grid size and deny if outside specified range
 	do {
-		var tempSize = +prompt("Please specifiy a grid size between 16-64", 16);
+		tempSize = +prompt("Please specifiy a grid size between 16-64", 16);
 		if (tempSize >= 16 && tempSize <= 64) {
 			badSize = false;
 		} else {
@@ -51,8 +61,11 @@ function setBackground () {
 
 function restart () {
 	$('#container').empty();
+	$('.btn, #fade').removeClass('selected-button');
+	$('#fade').html('Toggle Fade Mode');
 	buildGrid();
 	backgroundColor = 'black';
+	$('#default').addClass('selected-button');
 	setBackground();
 }
 
@@ -61,20 +74,15 @@ function clearGrid () {
 }
 
 function blackMode () {
+	$('.btn').removeClass('selected-button');
+	$(this).addClass('selected-button');
 	backgroundColor = 'black';
 	setBackground();
 }
 
 function rainbowMode () {
+	$('.btn').removeClass('selected-button');
+	$(this).addClass('selected-button');
 	backgroundColor = 'random';
 	setBackground();
 }
-
-$(document).ready(function() {
-	buildGrid();
-	setBackground();
-	$('#reset').click(restart);
-	$('#clear').click(clearGrid);
-	$('#default').click(blackMode);
-	$('#rainbow').click(rainbowMode);
-});
